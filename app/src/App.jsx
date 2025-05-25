@@ -37,6 +37,9 @@ const Button = styled.button `
   color: white;
 `
 
+const FoodContainer = styled.section``;
+const FoodCard = styled.div``;
+
 const App = () => {
   return(
      <Container>
@@ -56,6 +59,10 @@ const App = () => {
         <Button>Lunch</Button>
         <Button>Dinner</Button>
       </FilterContainer>
+
+      <FoodContainer>
+        <FoodCard></FoodCard>
+      </FoodContainer>
 
     </Container>
   )
