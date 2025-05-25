@@ -28,6 +28,7 @@ const FilterContainer = styled.section`
   display: flex;
   justify-content: center;
   gap: 20px;
+  padding-bottom: 40px;
 `
 const Button = styled.button `
   background-color: #ff4343;
@@ -37,7 +38,12 @@ const Button = styled.button `
   color: white;
 `
 
-const FoodContainer = styled.section``;
+const FoodContainer = styled.section`
+  height: calc(100vh - 210px);
+  background-image: url("/not.jpg");
+  background-size: cover;
+`;
+
 const FoodCard = styled.div``;
 
 const App = () => {
