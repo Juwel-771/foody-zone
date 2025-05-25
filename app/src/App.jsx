@@ -11,6 +11,18 @@ const TopContainer = styled.section`
   padding: 16px;
   align-items: center;
 
+  .search{
+    input{
+      background-color: transparent;
+      border: 1px solid red;
+      color: white;
+      border-radius: 5px;
+      height: 40px;
+      font-size: 16px;
+      padding: 0px 10px;
+    }
+  }
+
 `
 
 const App = () => {
