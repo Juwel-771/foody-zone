@@ -16,7 +16,7 @@ const SearchResult = ({data}) => {
       <FoodCards>
         {
             data?.map((food)=> (
-                <FoodCard key = {food.name}></FoodCard>
+                <FoodCard key = {food.name}>{food.text}</FoodCard>
             ))
         }
       </FoodCards>
