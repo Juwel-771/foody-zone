@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { BASE_URL } from "../../App";
 
 const FoodContainer = styled.section`
   height: calc(100vh - 210px);
@@ -15,8 +16,18 @@ const SearchResult = ({data}) => {
     <FoodContainer>
       <FoodCards>
         {
-            data?.map((food)=> (
-                <FoodCard key = {food.name}>{food.text}</FoodCard>
+            data?.map(({name, image, text})=> (
+                <FoodCard key = {name}>
+                    <div className="food_image">
+                        <img src={BASE_URL + image} />
+                    </div>
+                    <div className="food_info">
+                        <div className="info">
+                            <h3> {name} </h3>
+                            <p> {text} </p>
+                        </div>
+                    </div>
+                </FoodCard>
             ))
         }
       </FoodCards>
