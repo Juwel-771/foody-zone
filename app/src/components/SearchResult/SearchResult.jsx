@@ -6,13 +6,20 @@ const FoodContainer = styled.section`
   background-size: cover;
 `;
 
+const FoodCards = styled.div``;
 const FoodCard = styled.div``;
 
 
-const SearchResult = () => {
+const SearchResult = ({data}) => {
   return (
     <FoodContainer>
-      <FoodCard></FoodCard>
+      <FoodCards>
+        {
+            data?.map((food)=> (
+                <FoodCard key = {food.name}></FoodCard>
+            ))
+        }
+      </FoodCards>
     </FoodContainer>
   );
 };

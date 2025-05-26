@@ -84,7 +84,7 @@ const App = () => {
         <Button>Lunch</Button>
         <Button>Dinner</Button>
       </FilterContainer>
-      <SearchResult/>
+      <SearchResult data = {data} />
     </Container>
   );
 };
