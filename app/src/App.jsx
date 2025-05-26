@@ -45,6 +45,7 @@ const Button = styled.button`
 
 const App = () => {
   const [data, setData] = useState(null);
+  const [filteredData, setFilteredData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -57,6 +58,7 @@ const App = () => {
         const json = await response.json();
 
         setData(json);
+        setFilteredData(json);
         setLoading(false);
       } catch (error) {
         setError("Unable to fetch");
@@ -65,6 +67,12 @@ const App = () => {
 
     fetchFoodData();
   }, []);
+
+  const searchFood = (e) => {
+    const searchValue = e.target.value;
+    console.log(searchValue);
+  }
+
 
   return (
     <Container>
@@ -75,7 +83,7 @@ const App = () => {
         </div>
 
         <div className="search">
-          <input placeholder="Search Food" />
+          <input onChange={searchFood} placeholder="Search Food" />
         </div>
       </TopContainer>
       <FilterContainer>
@@ -84,7 +92,7 @@ const App = () => {
         <Button>Lunch</Button>
         <Button>Dinner</Button>
       </FilterContainer>
-      <SearchResult data = {data} />
+      <SearchResult data = {filteredData} />
     </Container>
   );
 };
