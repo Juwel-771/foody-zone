@@ -94,6 +94,25 @@ const App = () => {
     setSelectedBtn(type);
   }
 
+  const filterBtn = [
+    {
+      name: "All",
+      type: "all"
+    }, 
+    {
+      name: "Breakfast",
+      type: "breakfast"
+    },
+    {
+      name: "Dinner",
+      type: "dinner"
+    },
+    {
+      name: "Lunch",
+      type: "lunch"
+    }
+  ]
+
 
   return (
     <Container>
@@ -108,10 +127,11 @@ const App = () => {
         </div>
       </TopContainer>
       <FilterContainer>
-        <Button onClick={()=>filterFood("all")}>All</Button>
-        <Button onClick={()=>filterFood("breakfast")}>Breakfast</Button>
-        <Button onClick={()=>filterFood("lunch")}>Lunch</Button>
-        <Button onClick={()=>filterFood("dinner")}>Dinner</Button>
+       {
+        filterBtn.map((value)=> (
+          <Button key={value.name} onClick={()=>filterFood(value.type)}> {value.name} </Button>
+        ))
+       }
       </FilterContainer>
       <SearchResult data = {filteredData} />
     </Container>
